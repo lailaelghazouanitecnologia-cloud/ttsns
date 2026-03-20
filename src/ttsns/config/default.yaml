@@ -1,0 +1,41 @@
+# TTSNS default configuration
+
+audio:
+  sample_rate: 44100
+  # SNR thresholds for noise classification (dB)
+  snr_clean: 30
+  snr_mild: 20
+  snr_moderate: 10
+  # VAD
+  vad_threshold: 0.5
+  # Preprocessing
+  target_loudness_lufs: -23.0
+
+text:
+  # No G2P — LLM handles text directly
+  max_length: 512
+
+model:
+  # Slow AR (LLM backbone)
+  slow_ar:
+    name: "Qwen/Qwen2.5-0.5B"  # Start small for prototyping
+    max_tokens: 2048
+  # Fast AR (acoustic decoder)
+  fast_ar:
+    num_layers: 4
+    hidden_dim: 512
+    num_codebooks: 10  # codebooks 2-10 (9 codebooks)
+
+vocoder:
+  type: "dac"  # Descript Audio Codec
+
+training:
+  batch_size: 8
+  learning_rate: 1.0e-4
+  max_steps: 100000
+  warmup_steps: 1000
+
+inference:
+  chunk_size: 20  # frames per chunk for streaming
+  temperature: 0.7
+  top_p: 0.9

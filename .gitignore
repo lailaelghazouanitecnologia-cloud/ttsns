@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.venv/
+*.wav
+*.mp3
+*.flac
+*.ogg
+data/
+checkpoints/
+wandb/
+.ruff_cache/
+.pytest_cache/

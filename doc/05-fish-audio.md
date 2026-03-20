@@ -27,12 +27,15 @@
 
 | Versión | Fecha | Hito principal |
 |---------|-------|----------------|
-| Fish Speech v1.2 | 2024 Q1 | Primera versión pública, arquitectura VQGAN + Transformer |
-| Fish Speech v1.4 | 2024 Q3 | Dual-AR + GFSQ + Firefly-GAN. Paper técnico publicado |
-| Fish Speech v1.5 | 2024 Q4 | 300K+ horas de datos, ELO 1339 en TTS Arena, WER 3.5% |
-| Fish Audio S1 | 2025 | Escalado de datos y modelo |
+| Fish Speech v1.0 | 2024 Abr | Primera release open-source |
+| Fish Speech v1.2 | 2024 Jul | Auto-reranking, bilingüe, cuantización, Faster Whisper |
+| Fish Speech v1.4 | 2024 Sep | Dual-AR + GFSQ + Firefly-GAN. 720K horas. Paper: arXiv:2411.01156 |
+| Fish Speech v1.5 | 2024 Q4 | 1M+ horas, ELO 1339 en TTS Arena, WER 3.5%, ONNX export |
+| Fish Speech v1.6 | 2025 Mar | Mayor estabilidad, soporte de emociones, mejora multilingüe |
+| OpenAudio S1 | 2025 | Rebrand. 4B params. #1 en TTS-Arena2. RLHF online. 48+ emociones |
+| OpenAudio S1-mini | 2025 | 0.5B params, open-source (WER 0.011, CER 0.005) |
 | **Fish Audio S2** | 2025 | Qwen3-4B backbone, 10M+ horas, RL con GRPO |
-| **Fish Audio S2 Pro** | 2026 | 4B params, SOTA en todos los benchmarks públicos |
+| **Fish Audio S2 Pro** | 2026 | 4B params, SOTA en todos los benchmarks. Paper: arXiv:2603.08823 |
 
 **Filosofía de diseño:**
 - Sin dependencia de G2P (grafema-a-fonema) — el modelo entiende texto nativamente como un LLM.
@@ -443,6 +446,7 @@ Ejemplos de control inline:
 | **Control emocional** | 15K+ tags NL | No | Limitado | No | No | No |
 | **Multi-speaker** | Nativo | No | No | No | No | No |
 | **RL alignment** | GRPO | No | No | No | No | No |
+| **Sample rate** | 44.1 kHz | 24 kHz | 24 kHz | 24 kHz | 24 kHz | 24 kHz |
 | **Backbone LLM** | Qwen3-4B | GPT-2 | GPT custom | GPT custom | — | DiT |
 
 ### Ventajas arquitectónicas clave
@@ -471,13 +475,30 @@ Features:
 - Formatos: WAV, MP3, OGG, FLAC
 ```
 
+### SDKs oficiales
+
+| SDK | Instalación | Notas |
+|-----|-------------|-------|
+| **Python** | `pip install fish-audio-sdk` | Python 3.9+, async, streaming, type hints |
+| **JavaScript/TS** | `npm install fish-audio-sdk` | Node 16+ |
+| **Go** | `fish-audio-go` | — |
+| **n8n** | Community node oficial | Workflow automation |
+| **Dify** | Integración nativa | — |
+
 ### Open Source
 
 | Recurso | URL |
 |---------|-----|
-| Código | github.com/fishaudio/fish-speech |
+| Código (28K+ stars) | github.com/fishaudio/fish-speech |
 | Modelos | huggingface.co/fishaudio |
 | Docs | speech.fish.audio |
+| Bert-VITS2 (8.6K stars) | github.com/fishaudio/Bert-VITS2 |
+| Audio preprocessing | github.com/fishaudio/audio-preprocess |
+
+### Formatos de salida
+
+- MP3 (64/128/192 kbps), WAV, PCM, Opus
+- Sample rate: 44.1 kHz
 
 ### Despliegue
 

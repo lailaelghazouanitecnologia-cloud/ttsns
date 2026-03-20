@@ -9,3 +9,4 @@ Esta carpeta contiene documentación técnica sobre los principales modelos de i
 3. [Arquitecturas Modernas](03-arquitecturas-modernas.md) — VITS, Bark, Tortoise TTS, XTTS, Valle
 4. [Comparativa](04-comparativa.md) — Tabla comparativa de modelos, trade-offs y casos de uso
 5. **[Fish Audio](05-fish-audio.md)** — Análisis completo: Dual-AR, GRPO, S2 Pro (SOTA)
+6. [Dual-AR vs LLM+Difusión](06-dual-ar-vs-diffusion-llm.md) — VS completo: streaming, calidad, robustez, híbrido

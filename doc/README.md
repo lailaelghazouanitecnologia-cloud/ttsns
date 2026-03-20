@@ -13,3 +13,4 @@ Esta carpeta contiene documentación técnica sobre los principales modelos de i
 7. **[Arquitectura del Sistema](07-arquitectura-sistema.md)** — Decisiones de diseño, componentes, stack, roadmap
 8. **[Pipeline de Anotación](08-pipeline-anotacion.md)** — Router aLLM: SenseVoice + Emotion2Vec (bulk) → GLM-4-Voice (casos complejos)
 9. **[Codecs Neurales de Audio](09-codecs-audio.md)** — Comparativa de codecs, Mimi como mini modelo para análisis de ondas
+10. **[Plan V0.1](10-plan-v01.md)** — Plan completo de desarrollo: fases, arquitectura, modelo, entrenamiento, inferencia

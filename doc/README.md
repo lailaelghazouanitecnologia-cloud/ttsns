@@ -12,3 +12,4 @@ Esta carpeta contiene documentación técnica sobre los principales modelos de i
 6. [Dual-AR vs LLM+Difusión](06-dual-ar-vs-diffusion-llm.md) — VS completo: streaming, calidad, robustez, híbrido
 7. **[Arquitectura del Sistema](07-arquitectura-sistema.md)** — Decisiones de diseño, componentes, stack, roadmap
 8. **[Pipeline de Anotación](08-pipeline-anotacion.md)** — Router aLLM: SenseVoice + Emotion2Vec (bulk) → GLM-4-Voice (casos complejos)
+9. **[Codecs Neurales de Audio](09-codecs-audio.md)** — Comparativa de codecs, Mimi como mini modelo para análisis de ondas
